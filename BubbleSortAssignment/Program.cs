@@ -11,18 +11,30 @@ namespace BubbleSortAssignment
         static void Main(string[] args)
         {
             int[] input = { 1, -2, -3, 2, 5, 1 };
+
+            Sort(input);
+
+            Console.ReadLine();
         }
 
-        private void Sort(int[] input)
+        private static void Sort(int[] input)
         {
-            int[] result = new int[input.Length];
+            for (int i = 0; i < input.Length; i++)
+            {
+                for (int j = 0; j < input.Length - 1; j++)
+                {
+                    if(input[j] > input[j + 1])
+                    {
+                        int num = input[j];
+                        input[j] = input[j + 1];
+                        input[j + 1] = num;
+                    }
+                }
+            }
 
             foreach (int num in input)
             {
-                foreach (int number in input)
-                {
-                    
-                }
+                Console.WriteLine(num);
             }
         }
     }
